@@ -1,4 +1,41 @@
-﻿namespace SkillCheck.Tests.Intern
+namespace SkillCheck.Tests.Intern
+{
+    public class MathHelper
+    {
+        public static bool IsEven(int x)
+        {
+            return x % 2 == 0;
+        }
+
+        public static int Add(int x, int y)
+        {
+            return x + y;
+        }
+
+        public static int Factorial(int x)
+        {
+            if (x < 0)
+                throw new ArgumentException("Факториала отрицательного числа не существует");
+
+            int result = 1;
+            for (int i = 1;  i <= x; i++)
+            {
+                result *= i;
+            }
+            return result;
+        }
+
+        // Метод деления двух чисел
+        public static double Divide(double num1, double num2)
+        {
+            if (num2 == 0)
+                throw new DivideByZeroException("Делить на ноль нельзя");
+
+            return num1 / num2;
+        }
+    }
+}
+namespace SkillCheck.Tests.Intern
 {
     public class MathTests
     {
@@ -60,40 +97,4 @@
         }
     }
 }
-namespace SkillCheck.Tests.Intern
-{
-    public class MathHelper
-    {
-        public static bool IsEven(int x)
-        {
-            return x % 2 == 0;
-        }
 
-        public static int Add(int x, int y)
-        {
-            return x + y;
-        }
-
-        public static int Factorial(int x)
-        {
-            if (x < 0)
-                throw new ArgumentException("Факториала отрицательного числа не существует");
-
-            int result = 1;
-            for (int i = 1;  i <= x; i++)
-            {
-                result *= i;
-            }
-            return result;
-        }
-
-        // Метод деления двух чисел
-        public static double Divide(double num1, double num2)
-        {
-            if (num2 == 0)
-                throw new DivideByZeroException("Делить на ноль нельзя");
-
-            return num1 / num2;
-        }
-    }
-}
