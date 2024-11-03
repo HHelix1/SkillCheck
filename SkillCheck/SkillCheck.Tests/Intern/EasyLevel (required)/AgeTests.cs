@@ -1,4 +1,4 @@
-namespace SkillCheck.Tests.Intern
+namespace SkillCheck
 {
     public class PersonHelper
     {
