@@ -1,4 +1,21 @@
-﻿namespace SkillCheck.Tests.Intern
+namespace SkillCheck.Tests.Intern
+{
+    public class PersonHelper
+    {
+        public bool IsAdult(int age)
+        {
+            if (age >= 18)
+            {
+                return age >= 18;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+}
+namespace SkillCheck.Tests.Intern
 {
     public class AgeTests
     {
@@ -21,20 +38,4 @@
         }
     }
 }
-namespace SkillCheck.Tests.Intern
-{
-    public class PersonHelper
-    {
-        public bool IsAdult(int age)
-        {
-            if (age >= 18)
-            {
-                return age >= 18;
-            }
-            else
-            {
-                return false;
-            }
-        }
-    }
-}
+
