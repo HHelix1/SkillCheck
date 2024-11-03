@@ -25,3 +25,48 @@
         //}
     }
 }
+namespace SkillCheck
+{
+public class ArrayHelper
+{
+    public static int Max(int[] array)
+    {
+        if (array == null) throw new ArgumentNullException("Массив не должен быть равен null");
+
+        int max = array[0];
+        for(int i =0;  i < max; i++)
+        {
+            if (max < array[i])
+            {
+                max = array[i];
+            }
+        }
+        return max;
+    }
+    public static int[] Sort(int[] array)
+        {
+            if (array == null || array.Length == 0)
+                throw new ArgumentException("Array must not be null or empty");
+
+            int[] sortedArray = (int[])array.Clone();
+            int n = sortedArray.Length;
+            int gap = n / 2;
+
+            while (gap > 0)
+            {
+                for (int i = gap; i < n; i++)
+                {
+                    int temp = sortedArray[i];
+                    int j;
+                    for (j = i; j >=  gap && sortedArray[j - gap] > temp; j -= gap)
+                    {
+                        sortedArray[j] = sortedArray[j - gap];
+                    }
+                    sortedArray[j] = temp;
+                }
+                gap /= 2;
+            }
+            return sortedArray; // Возвращаем отсортированный массив
+        }
+    }
+}
